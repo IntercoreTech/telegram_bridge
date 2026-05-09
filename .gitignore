@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.swp
+.DS_Store
+
+# never commit the token or chat id
+.claude-bridge/
+telegram-token
+telegram-chat-id
+
+# logs / queues
+telegram-bridge.log
+phone-queue.txt

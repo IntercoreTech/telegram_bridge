@@ -1,0 +1,18 @@
+[Unit]
+Description=Telegram bridge for Claude Code session
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# install.sh edits this path on install if needed
+ExecStart=/usr/bin/python3 %h/Workspace/claude-code-telegram-bridge/telegram_bridge.py
+WorkingDirectory=%h/Workspace
+Restart=on-failure
+RestartSec=10
+StandardOutput=append:%h/Workspace/telegram-bridge.log
+StandardError=append:%h/Workspace/telegram-bridge.log
+MemoryMax=512M
+
+[Install]
+WantedBy=default.target
